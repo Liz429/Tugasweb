@@ -1,4 +1,3 @@
-
 <?php 
 // mengaktifkan session pada php
 session_start();
