@@ -27,15 +27,15 @@ if($cek > 0){
     $_SESSION['username'] = $username;
     $_SESSION['level'] = "admin";
     // alihkan ke halaman dashboard admin
-   header("location:halaman_admin.php");
+   header("location:admin/admin.php");
 
-// cek jika user login sebagai operator
+// cek jika user login sebagai pegawai
 }else if($data['level']=="operator"){
    // buat session login dan username
    $_SESSION['username'] = $username;
    $_SESSION['level'] = "operator";
-   // alihkan ke halaman dashboard operator
-  header("location:halaman_operator.php");
+   // alihkan ke halaman dashboard pegawai
+  header("location:operator/operator.php");
 
   // cek jika user login sebagai siswa
   }else if($data['level']=="siswa"){
@@ -43,21 +43,9 @@ if($cek > 0){
    $_SESSION['username'] = $username;
    $_SESSION['level'] = "siswa";
    // alihkan ke halaman dashboard siswa
-  header("location:halaman_siswa.php");
+  header("location:siswa/siswa.php");
 
- 
-    // cek jika user login sebagai kepsek
-  }else if($data['level']=="kepsek"){
-   // buat session login dan username
-   $_SESSION['username'] = $username;
-   $_SESSION['level'] = "kepsek";
-   // alihkan ke halaman dashboard kepsek
-  header("location:kepsek/kepsek.php");
-
-
-
-
-       // cek jika user login sebagai guru
+// cek jika user login sebagai guru
   }else if($data['level']=="guru"){
    // buat session login dan username
    $_SESSION['username'] = $username;
@@ -65,16 +53,21 @@ if($cek > 0){
    // alihkan ke halaman dashboard guru
   header("location:guru/guru.php");
 
- 
- // cek jika user login sebagai orangtua
+// cek jika user login sebagai kepsek
+  }else if($data['level']=="kepsek"){
+   // buat session login dan username
+   $_SESSION['username'] = $username;
+   $_SESSION['level'] = "kepsek";
+   // alihkan ke halaman dashboard kepsek
+  header("location:kepsek/kepsek.php");
+
+// cek jika user login sebagai orangtua
   }else if($data['level']=="orangtua"){
    // buat session login dan username
    $_SESSION['username'] = $username;
    $_SESSION['level'] = "orangtua";
    // alihkan ke halaman dashboard orangtua
   header("location:orangtua/orangtua.php");
-
-
 
 
 }else{
